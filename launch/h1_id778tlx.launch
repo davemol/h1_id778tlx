@@ -1,0 +1,5 @@
+<launch>
+    <node name="t_user_info" pkg="h1_id778tlx" type="t_user_info"/>
+    <node name="l_user_info" pkg="h1_id778tlx" type="l_user_info" output="screen"/>
+    <node name="key_user_info" pkg="h1_id778tlx" type="key_user_info" output="screen"/>
+</launch>
