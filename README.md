@@ -1,4 +1,4 @@
-# Homework1
+# Homework1 - ROS
 
 * [Getting started](#getting-started)
 * [Prerequisiti](#prerequisiti)
@@ -19,10 +19,10 @@ Primo compito del corso laboratorio Ciberfisico.
 
 ## Getting started
 
-Clonare tramite il comando "git clone" il repository homework1 caricato sul portale git hub, nella directory home_catkin/src (al posto di home_catkin scrivere la propria home directory di ROS) 
+Clonare tramite il comando "git clone" il repository h1_id778tlx caricato sul portale git hub, nella directory home_catkin/src (al posto di home_catkin scrivere la propria home directory di ROS) 
 
 ```
-git clone https://github.com/davemol/homework1.git
+git clone https://github.com/davemol/h1_id778tlx.git
 ```
 
 ### Prerequisiti
@@ -40,7 +40,7 @@ cd catkin_ws
 * Eseguire il seguente comando:
 
 ```
-catkin_make --pkg homework1
+catkin_make --pkg h1_id778tlx
 ```
 
 ## Avvio del progetto
@@ -58,25 +58,25 @@ roscore
 * Eseguire il nodo "talker":
 
 ```
-rosrun homework1 t_user_info
+rosrun h1_id778tlx t_user_info
 ```
 
 * Eseguire il nodo "listener":
 
 ```
-rosrun homework1 l_user_info
+rosrun h1_id778tlx l_user_info
 ```
 
 * Eseguire il nodo che legge da tastiera:
 
 ```
-rosrun homework1 key_user_info
+rosrun h1_id778tlx key_user_info
 ```
 
 ### Uso del launch file:
 
 ```
-roslaunch homework1 homework1.launch
+roslaunch h1_id778tlx h1_id778tlx.launch
 ```
 ![rqt_graph](images/run1.png)
 
@@ -94,7 +94,7 @@ Il progetto crea i 3 nodi seguenti:
 * **Nodo key_user_info:** nodo che si impegna di leggere da tastiera le scelte dell' utente e di pubblicarle sul topic
 		      "car_choice" - [key_user_info.cpp](src/key_user_info.cpp)
 
-![rqt_graph](images/homework1_graph.png)
+![rqt_graph](images/h1_id778tlx_graph.png)
 
 ### Struttura del messaggio
 
