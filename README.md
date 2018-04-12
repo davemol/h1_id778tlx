@@ -1,79 +1,79 @@
 # Homework1 - ROS
 
 * [Getting started](#getting-started)
-* [Prerequisiti](#prerequisiti)
-* [Installazione](#installazione)
-* [Avvio del progetto](#avvio-del-progetto)
-* [Modo tradizionale](#modo-tradizionale)
-* [Uso del launch file](#uso-del-launch-file)
-* [Scelte implementative](#scelte-implementative)
-* [Struttura del messaggio](#struttura-del-messaggio)
-* [Elenco opzioni utente](#elenco-opzioni-utente)
-* [Realizzato con](#realizzato-con)
-* [Autore](#autore)
-* [Licenza](#licenza)
+* [Prerequisites](#prerequisites)
+* [Installation](#installation)
+* [Running project](#running-project)
+* [Traditional method](#traditional-method)
+* [Launch file method](#launch-file-method)
+* [Project choices](#project-choices)
+* [Message format](#message-format)
+* [List user options](#list-user-options)
+* [Made with](#made-with)
+* [Author](#author)
+* [Licence](#licence)
 
-Primo compito del corso laboratorio Ciberfisico. 
+First homework of the Ciberfisico laboratory course.
 
 ![laboratorio ciberfisico](images/cyberphysical-lab.jpg)
 
 ## Getting started
 
-Clonare tramite il comando "git clone" il repository h1_id778tlx caricato sul portale git hub, nella directory home_catkin/src (al posto di home_catkin scrivere la propria home directory di ROS) 
+Use the "git clone" command to clone repository in home_catkin/src directory (where "home_catkin" is the ROS's home directory). The repository is called h1_id778tlx and it's uploaded on git hub.
 
 ```
 git clone https://github.com/davemol/h1_id778tlx.git
 ```
 
-### Prerequisiti
+## Prerequisites
 
-Necessario avere catkin ROS installato sul proprio pc. É inoltre consigliata l'ultima versione stabile di Ubuntu Linux (16.04 LTS)
+Must install ROS on PC and I suggest to use the last stable version Ubuntu Linux (16.04 LTS).  
 
-### Installazione
+## Installation
 
-* Spostarsi nella propria cartella home di ROS:
+* Move in ROS's home directory:
 
 ```
 cd catkin_ws
 ```
 
-* Eseguire il seguente comando:
+* Run the following command to create ROS's package:
 
 ```
 catkin_make --pkg h1_id778tlx
 ```
 
-## Avvio del progetto
+## Running project
  
-Possono essere utilizzati 2 modi.
+There are two alternatives
 
-### Modo tradizionale
+### Traditional method
 
-* Eseguire il nodo principale:
+* Run the main node:
 
 ```
 roscore
 ```
 
-* Eseguire il nodo "talker":
+* Run the "talker" node:
 
 ```
 rosrun h1_id778tlx t_user_info
 ```
 
-* Eseguire il nodo "listener":
+* Run the "listener" node:
 
 ```
 rosrun h1_id778tlx l_user_info
 ```
 
-* Eseguire il nodo che legge da tastiera:
+* Run the "keyboard" node:
 
 ```
 rosrun h1_id778tlx key_user_info
 ```
 
-### Uso del launch file:
+### Launch file method
 
 ```
 roslaunch h1_id778tlx h1_id778tlx.launch
@@ -82,42 +82,40 @@ roslaunch h1_id778tlx h1_id778tlx.launch
 
 ![rqt_graph](images/run2.png)
 
-## Scelte implementative
+## Project choices
 
-Il progetto crea i 3 nodi seguenti:
+This project is composed by 3 nodes:
 
-* **Nodo t_user_info:** nodo che si impegna di pubblicare ogni secondo sul topic "user_info" il messaggio - [t_user_info.cpp](src/t_user_info.cpp)
+* **t_user_info:** this node publishes messages on the topic **user_info** every second - [t_user_info.cpp](src/t_user_info.cpp)
 
-* **Nodo l_user_info:** nodo che si iscrive al topic "user_info" per ricevere i messaggi pubblicati e al topic "car_choice"
-		    per conoscere la scelta dell'utente. Visualizza il contenuto del messaggio nella sua interezza o dopo averlo 			    opportunamente filtrato in base alla scelta dell'utente - [l_user_info.cpp](src/l_user_info.cpp)
+* **l_user_info:** this node signes up on topic **user_info** to receive messages that's published by t_user_info node and signes up on topic **car_choice** to know what the user press on the keyboard. Then the node showes all the body of message or only a part of the message according to the user's choice - [l_user_info.cpp](src/l_user_info.cpp)
 
-* **Nodo key_user_info:** nodo che si impegna di leggere da tastiera le scelte dell' utente e di pubblicarle sul topic
-		      "car_choice" - [key_user_info.cpp](src/key_user_info.cpp)
+* **key_user_info:** this node reads from the keyboard what the user press and then publishes it on the topic **car_choice** -  [key_user_info.cpp](src/key_user_info.cpp)
 
 ![rqt_graph](images/h1_id778tlx_rqtgraph.png)
 
-### Struttura del messaggio
+### Message format
 
-La struttura del messaggio pubblicato sul topic "user_info" è descritta in un file apposito [User_info.msg](msg/User_info.msg).
+The message format of the messages that are published on the topic **user_info**, is written in [User_info.msg](msg/User_info.msg) file.
 
-### Elenco opzioni utente
+### List user options
 
-Le scelte dell'utente sono:
+User can choose the following options:
 
-* a: visualizza tutto (età,nome,corso di studi)
-* e: visualizza età
-* c: visualizza corso di studi
-* n: visualizza nome
+* a: show all (old,name,course of study)
+* e: show old
+* c: show course of study
+* n: show name
 
-## Realizzato con
+## Made with
 
-* [ROS](http://wiki.ros.org/catkin) - framework utilizzato
+* [ROS](http://wiki.ros.org/catkin) - framework used
 
-## Autore
+## Author
 
-* **Davide Molinari** - *pagina git ufficiale* - [davemol](https://github.com/davemol)
+* **Davide Molinari** - *official git page* - [davemol](https://github.com/davemol)
 
-## Licenza
+## Licence
 
-Questo progetto ha la seguente licenza - vedi il [LICENSE](LICENSE) file per i dettagli
+This project has the licence - see [LICENSE](LICENSE) file to more details
 
