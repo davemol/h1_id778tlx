@@ -94,7 +94,7 @@ Il progetto crea i 3 nodi seguenti:
 * **Nodo key_user_info:** nodo che si impegna di leggere da tastiera le scelte dell' utente e di pubblicarle sul topic
 		      "car_choice" - [key_user_info.cpp](src/key_user_info.cpp)
 
-![rqt_graph](images/h1_id778tlx_graph.png)
+![rqt_graph](images/h1_id778tlx_rqtgraph.png)
 
 ### Struttura del messaggio
 
