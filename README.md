@@ -37,7 +37,7 @@ Must install ROS on PC and I suggest to use the last stable version Ubuntu Linux
 cd catkin_ws
 ```
 
-* Run the following command to create ROS's package:
+* Run the following command to compile ROS's package:
 
 ```
 catkin_make --pkg h1_id778tlx
