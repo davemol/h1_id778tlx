@@ -100,7 +100,7 @@ The message format of the messages that are published on the topic *user_info*, 
 
 ### List user options
 
-User can choose the following options:
+User can press from the keyboard one of the following options:
 
 * a: show all (old,name,course of study)
 * e: show old
