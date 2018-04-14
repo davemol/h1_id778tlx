@@ -88,7 +88,7 @@ This project is composed by 3 nodes:
 
 * **t_user_info:** this node publishes messages on the topic *user_info* every second - [t_user_info.cpp](src/t_user_info.cpp)
 
-* **l_user_info:** this node signes up on topic *user_info* to receive messages that's published by t_user_info node and signes up on topic *car_choice* to know what the user press on the keyboard. Then the node showes all the body of message or only a part of the message according to the user's choice - [l_user_info.cpp](src/l_user_info.cpp)
+* **l_user_info:** this node signes up on topic *user_info* to receive messages that's published by t_user_info node and signes up on topic *car_choice* to know what the user press on the keyboard (see List user option point). Then the node showes all the body of message or only a part of the message according to the user's choice - [l_user_info.cpp](src/l_user_info.cpp)
 
 * **key_user_info:** this node reads from the keyboard what the user press and then publishes it on the topic *car_choice* -  [key_user_info.cpp](src/key_user_info.cpp)
 
